@@ -1,10 +1,9 @@
 import { Box } from '@chakra-ui/layout'
 import useTrailers from '../../hooks/useTrailers'
-import { Spinner } from '@chakra-ui/react'
 
 const GameTrailer = ({gameId} : {gameId:number}) => {
 
-    const {data,error,isLoading} = useTrailers(gameId)
+    const {data,error} = useTrailers(gameId)
     
     if (error) throw Error
 
