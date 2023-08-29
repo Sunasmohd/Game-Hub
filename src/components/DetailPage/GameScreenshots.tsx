@@ -1,9 +1,13 @@
-import { Box, Image, SimpleGrid } from "@chakra-ui/react"
+import { Box, Image, SimpleGrid, Spinner } from "@chakra-ui/react"
 import useScreenshots from "../../hooks/useScreenshots"
 
 const GameScreenshots = ({gameId} : {gameId:number}) => {
     
-    const {data} = useScreenshots(gameId)
+    const {data,isLoading,error} = useScreenshots(gameId)
+
+    if (error) throw Error
+
+    if (isLoading) return <Spinner/>
     return (
        <Box marginY={6}>
         
