@@ -8,10 +8,8 @@ const GameTrailer = ({gameId} : {gameId:number}) => {
     
     if (error) throw Error
 
-    if (isLoading) return <Spinner/>
-
     const trailer = data?.results[0]
-    
+
     if (trailer)
         return <Box marginY={5}>
             <video poster={trailer.preview} controls src={trailer.data.max} />

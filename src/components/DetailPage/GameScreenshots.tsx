@@ -8,6 +8,7 @@ const GameScreenshots = ({gameId} : {gameId:number}) => {
     if (error) throw Error
 
     if (isLoading) return <Spinner/>
+    
     return (
        <Box marginY={6}>
         
